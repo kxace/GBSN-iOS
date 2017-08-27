@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class CLLocation;
+#import <CoreLocation/CoreLocation.h>
 
 @interface SCPost : NSObject
 
-@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic, copy) CLLocation *location;
-- (instancetype)initWithDictionary:(NSDictionary *) dictionary;
+@property (nonatomic, strong) NSDate *postDate;
+@property (nonatomic, strong) CLLocation *location;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end
+
